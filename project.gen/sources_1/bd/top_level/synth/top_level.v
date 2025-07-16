@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Thu May 15 20:27:34 2025
+//Date        : Sat Jul  5 17:25:01 2025
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -1648,11 +1648,11 @@ module top_level
   top_level_axi_revision_0_0 axi_revision
        (.AXI_ACLK(source_200Mhz_clk),
         .AXI_ARESETN(source_200Mhz_resetn),
-        .S_AXI_ARADDR({smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR}),
+        .S_AXI_ARADDR({smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR,smartconnect_M01_AXI_ARADDR}),
         .S_AXI_ARPROT(smartconnect_M01_AXI_ARPROT),
         .S_AXI_ARREADY(smartconnect_M01_AXI_ARREADY),
         .S_AXI_ARVALID(smartconnect_M01_AXI_ARVALID),
-        .S_AXI_AWADDR({smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR}),
+        .S_AXI_AWADDR({smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR,smartconnect_M01_AXI_AWADDR}),
         .S_AXI_AWPROT(smartconnect_M01_AXI_AWPROT),
         .S_AXI_AWREADY(smartconnect_M01_AXI_AWREADY),
         .S_AXI_AWVALID(smartconnect_M01_AXI_AWVALID),
