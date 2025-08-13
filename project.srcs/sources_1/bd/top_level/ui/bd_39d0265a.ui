@@ -26,21 +26,21 @@ preplace inst smartconnect -pg 1 -lvl 3 -x 850 -y 690 -swap {38 1 2 3 4 5 6 7 8 
 preplace inst status_leds -pg 1 -lvl 6 -x 1900 -y 270 -swap {1 0 2 3} -defaultsOSRD -pinDir qsfp0_up left -pinY qsfp0_up 40L -pinDir qsfp1_up left -pinY qsfp1_up 20L -pinBusDir qsfp0_led right -pinBusY qsfp0_led 20R -pinBusDir qsfp1_led right -pinBusY qsfp1_led 40R
 preplace inst axi_revision -pg 1 -lvl 3 -x 850 -y 1060 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir AXI_ACLK left -pinY AXI_ACLK 60L -pinDir AXI_ARESETN left -pinY AXI_ARESETN 40L
 preplace inst zero -pg 1 -lvl 6 -x 1900 -y 430 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
-preplace netloc cabletest_CMAC_TXDIFF 1 2 3 620J 570 NJ 570 1380
-preplace netloc cabletest_CMAC_TXPOST 1 2 3 640J 590 980J 610 1440
-preplace netloc cabletest_CMAC_TXPRE 1 2 3 680J 630 NJ 630 N
-preplace netloc cabletest_RSFEC_ENABLE 1 2 3 600J 550 1000J 670 1500
-preplace netloc cabletest_resetn_out 1 2 3 560J 450 1040J 590 1400J
-preplace netloc cmac_cdc_user0_aligned 1 2 2 660J 610 960J
-preplace netloc cmac_cdc_user1_aligned 1 2 2 580J 470 NJ
-preplace netloc eth_0_stat_rx_aligned_0 1 4 2 1460J 310 1760
+preplace netloc cabletest_CMAC_TXDIFF 1 2 3 610J 570 NJ 570 1390
+preplace netloc cabletest_CMAC_TXPOST 1 2 3 630J 590 980J 610 1450
+preplace netloc cabletest_CMAC_TXPRE 1 2 3 670J 630 NJ 630 N
+preplace netloc cabletest_RSFEC_ENABLE 1 2 3 590J 550 1000J 670 1510
+preplace netloc cabletest_resetn_out 1 2 3 550J 450 1040J 590 1410J
+preplace netloc cmac_cdc_user0_aligned 1 2 2 650J 610 960J
+preplace netloc cmac_cdc_user1_aligned 1 2 2 570J 470 NJ
+preplace netloc eth_0_stat_rx_aligned_0 1 4 2 1470J 310 1750
 preplace netloc eth_0_stream_clk 1 4 1 N 490
 preplace netloc eth_0_stream_resetn 1 4 1 N 510
-preplace netloc eth_1_stat_rx_aligned_0 1 4 2 1420J 290 1760
+preplace netloc eth_1_stat_rx_aligned_0 1 4 2 1430J 290 1750
 preplace netloc eth_1_stream_clk 1 4 1 1340J 100n
 preplace netloc eth_1_stream_resetn 1 4 1 1360J 120n
-preplace netloc source_200Mhz_clk 1 1 4 300 960 700 650 1020 650 1480
-preplace netloc source_200Mhz_resetn 1 1 2 280 900 720
+preplace netloc source_200Mhz_clk 1 1 4 310 960 700 650 1020 650 1490
+preplace netloc source_200Mhz_resetn 1 1 2 290 900 720
 preplace netloc status_leds_qsfp0_led 1 6 1 N 290
 preplace netloc status_leds_qsfp1_led 1 6 1 N 310
 preplace netloc sys_rst_n_0_1 1 0 1 N 960
@@ -65,8 +65,8 @@ preplace netloc xdma_0_pcie_mgt 1 0 1 NJ 940
 levelinfo -pg 1 0 150 430 850 1190 1630 1900 2060
 pagesize -pg 1 -db -bbox -sgen -140 0 2230 1180
 ",
-   "No Loops_ScaleFactor":"0.496593",
-   "No Loops_TopLeft":"-266,2",
+   "No Loops_ScaleFactor":"0.64",
+   "No Loops_TopLeft":"327,3",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace port port-id_clk -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
