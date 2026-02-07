@@ -112,7 +112,8 @@ packet_bytes=$((cycles_per_packet * 64))
 xfer_bytes=$((xfer_packets * 2 * packet_bytes))
 
 # Perform a system reset
-reset
+echo "Resetting..."
+reset; sleep 3
 
 # Start transferring packets
 start $xfer_packets

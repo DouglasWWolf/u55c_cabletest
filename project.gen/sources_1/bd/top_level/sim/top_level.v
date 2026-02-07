@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Sat Jul  5 17:25:01 2025
+//Date        : Mon Feb  2 23:40:03 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -1010,6 +1010,17 @@ module ila_imp_18X5XRU
   input S_AXIS_TX_tvalid;
   input stream_clk;
 
+  (* CONN_BUS_INFO = "QSFP1_RX xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]QSFP1_RX_TDATA;
+  (* CONN_BUS_INFO = "QSFP1_RX xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]QSFP1_RX_TKEEP;
+  (* CONN_BUS_INFO = "QSFP1_RX xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire QSFP1_RX_TLAST;
+  (* CONN_BUS_INFO = "QSFP1_RX xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]QSFP1_RX_TUSER;
+  (* CONN_BUS_INFO = "QSFP1_RX xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire QSFP1_RX_TVALID;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]QSFP1_TX_TDATA;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]QSFP1_TX_TKEEP;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire QSFP1_TX_TLAST;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire QSFP1_TX_TREADY;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]QSFP1_TX_TUSER;
+  (* CONN_BUS_INFO = "QSFP1_TX xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire QSFP1_TX_TVALID;
   wire [511:0]S_AXIS_RX_tdata;
   wire [63:0]S_AXIS_RX_tkeep;
   wire S_AXIS_RX_tlast;
@@ -1021,74 +1032,63 @@ module ila_imp_18X5XRU
   wire S_AXIS_TX_tready;
   wire S_AXIS_TX_tuser;
   wire S_AXIS_TX_tvalid;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]axis_register_slice_0_M_AXIS_TDATA;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]axis_register_slice_0_M_AXIS_TKEEP;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TLAST;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TREADY;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]axis_register_slice_0_M_AXIS_TUSER;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TVALID;
   wire cmac_gt_rxusrclk2;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]rx_register_slice_M_AXIS_TDATA;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]rx_register_slice_M_AXIS_TKEEP;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire rx_register_slice_M_AXIS_TLAST;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]rx_register_slice_M_AXIS_TUSER;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire rx_register_slice_M_AXIS_TVALID;
 
-  assign M_AXIS_RX_tdata[511:0] = rx_register_slice_M_AXIS_TDATA;
-  assign M_AXIS_RX_tkeep[63:0] = rx_register_slice_M_AXIS_TKEEP;
-  assign M_AXIS_RX_tlast = rx_register_slice_M_AXIS_TLAST;
-  assign M_AXIS_RX_tuser = rx_register_slice_M_AXIS_TUSER;
-  assign M_AXIS_RX_tvalid = rx_register_slice_M_AXIS_TVALID;
-  assign M_AXIS_TX_tdata[511:0] = axis_register_slice_0_M_AXIS_TDATA;
-  assign M_AXIS_TX_tkeep[63:0] = axis_register_slice_0_M_AXIS_TKEEP;
-  assign M_AXIS_TX_tlast = axis_register_slice_0_M_AXIS_TLAST;
-  assign M_AXIS_TX_tuser[0] = axis_register_slice_0_M_AXIS_TUSER;
-  assign M_AXIS_TX_tvalid = axis_register_slice_0_M_AXIS_TVALID;
-  assign axis_register_slice_0_M_AXIS_TREADY = M_AXIS_TX_tready;
+  assign M_AXIS_RX_tdata[511:0] = QSFP1_RX_TDATA;
+  assign M_AXIS_RX_tkeep[63:0] = QSFP1_RX_TKEEP;
+  assign M_AXIS_RX_tlast = QSFP1_RX_TLAST;
+  assign M_AXIS_RX_tuser = QSFP1_RX_TUSER;
+  assign M_AXIS_RX_tvalid = QSFP1_RX_TVALID;
+  assign M_AXIS_TX_tdata[511:0] = QSFP1_TX_TDATA;
+  assign M_AXIS_TX_tkeep[63:0] = QSFP1_TX_TKEEP;
+  assign M_AXIS_TX_tlast = QSFP1_TX_TLAST;
+  assign M_AXIS_TX_tuser[0] = QSFP1_TX_TUSER;
+  assign M_AXIS_TX_tvalid = QSFP1_TX_TVALID;
+  assign QSFP1_TX_TREADY = M_AXIS_TX_tready;
   assign cmac_gt_rxusrclk2 = stream_clk;
   top_level_rx_register_slice_0 rx_register_slice
        (.aclk(cmac_gt_rxusrclk2),
         .aresetn(1'b1),
-        .m_axis_tdata(rx_register_slice_M_AXIS_TDATA),
-        .m_axis_tkeep(rx_register_slice_M_AXIS_TKEEP),
-        .m_axis_tlast(rx_register_slice_M_AXIS_TLAST),
-        .m_axis_tuser(rx_register_slice_M_AXIS_TUSER),
-        .m_axis_tvalid(rx_register_slice_M_AXIS_TVALID),
+        .m_axis_tdata(QSFP1_RX_TDATA),
+        .m_axis_tkeep(QSFP1_RX_TKEEP),
+        .m_axis_tlast(QSFP1_RX_TLAST),
+        .m_axis_tuser(QSFP1_RX_TUSER),
+        .m_axis_tvalid(QSFP1_RX_TVALID),
         .s_axis_tdata(S_AXIS_RX_tdata),
         .s_axis_tkeep(S_AXIS_RX_tkeep),
         .s_axis_tlast(S_AXIS_RX_tlast),
         .s_axis_tuser(S_AXIS_RX_tuser),
         .s_axis_tvalid(S_AXIS_RX_tvalid));
-  top_level_system_ila_2 system_ila
-       (.SLOT_0_AXIS_tdata(axis_register_slice_0_M_AXIS_TDATA[0]),
+  top_level_system_ila_5 system_ila_rx
+       (.SLOT_0_AXIS_tdata(QSFP1_RX_TDATA[0]),
         .SLOT_0_AXIS_tdest(1'b0),
         .SLOT_0_AXIS_tid(1'b0),
-        .SLOT_0_AXIS_tkeep(axis_register_slice_0_M_AXIS_TKEEP[0]),
-        .SLOT_0_AXIS_tlast(axis_register_slice_0_M_AXIS_TLAST),
-        .SLOT_0_AXIS_tready(axis_register_slice_0_M_AXIS_TREADY),
+        .SLOT_0_AXIS_tkeep(QSFP1_RX_TKEEP[0]),
+        .SLOT_0_AXIS_tlast(QSFP1_RX_TLAST),
+        .SLOT_0_AXIS_tready(1'b1),
         .SLOT_0_AXIS_tstrb(1'b1),
-        .SLOT_0_AXIS_tuser(axis_register_slice_0_M_AXIS_TUSER),
-        .SLOT_0_AXIS_tvalid(axis_register_slice_0_M_AXIS_TVALID),
-        .SLOT_1_AXIS_tdata(rx_register_slice_M_AXIS_TDATA[0]),
+        .SLOT_0_AXIS_tuser(QSFP1_RX_TUSER),
+        .SLOT_0_AXIS_tvalid(QSFP1_RX_TVALID),
+        .SLOT_1_AXIS_tdata(QSFP1_TX_TDATA[0]),
         .SLOT_1_AXIS_tdest(1'b0),
         .SLOT_1_AXIS_tid(1'b0),
-        .SLOT_1_AXIS_tkeep(rx_register_slice_M_AXIS_TKEEP[0]),
-        .SLOT_1_AXIS_tlast(rx_register_slice_M_AXIS_TLAST),
-        .SLOT_1_AXIS_tready(1'b1),
+        .SLOT_1_AXIS_tkeep(QSFP1_TX_TKEEP[0]),
+        .SLOT_1_AXIS_tlast(QSFP1_TX_TLAST),
+        .SLOT_1_AXIS_tready(QSFP1_TX_TREADY),
         .SLOT_1_AXIS_tstrb(1'b1),
-        .SLOT_1_AXIS_tuser(rx_register_slice_M_AXIS_TUSER),
-        .SLOT_1_AXIS_tvalid(rx_register_slice_M_AXIS_TVALID),
+        .SLOT_1_AXIS_tuser(QSFP1_TX_TUSER),
+        .SLOT_1_AXIS_tvalid(QSFP1_TX_TVALID),
         .clk(cmac_gt_rxusrclk2),
         .resetn(1'b0));
   top_level_tx_register_slice_1 tx_register_slice
        (.aclk(cmac_gt_rxusrclk2),
         .aresetn(1'b1),
-        .m_axis_tdata(axis_register_slice_0_M_AXIS_TDATA),
-        .m_axis_tkeep(axis_register_slice_0_M_AXIS_TKEEP),
-        .m_axis_tlast(axis_register_slice_0_M_AXIS_TLAST),
-        .m_axis_tready(axis_register_slice_0_M_AXIS_TREADY),
-        .m_axis_tuser(axis_register_slice_0_M_AXIS_TUSER),
-        .m_axis_tvalid(axis_register_slice_0_M_AXIS_TVALID),
+        .m_axis_tdata(QSFP1_TX_TDATA),
+        .m_axis_tkeep(QSFP1_TX_TKEEP),
+        .m_axis_tlast(QSFP1_TX_TLAST),
+        .m_axis_tready(QSFP1_TX_TREADY),
+        .m_axis_tuser(QSFP1_TX_TUSER),
+        .m_axis_tvalid(QSFP1_TX_TVALID),
         .s_axis_tdata(S_AXIS_TX_tdata),
         .s_axis_tkeep(S_AXIS_TX_tkeep),
         .s_axis_tlast(S_AXIS_TX_tlast),
@@ -1145,6 +1145,17 @@ module ila_imp_GWG18S
   input S_AXIS_TX_tvalid;
   input stream_clk;
 
+  (* CONN_BUS_INFO = "QSFP0_RX xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]QSFP0_RX_TDATA;
+  (* CONN_BUS_INFO = "QSFP0_RX xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]QSFP0_RX_TKEEP;
+  (* CONN_BUS_INFO = "QSFP0_RX xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire QSFP0_RX_TLAST;
+  (* CONN_BUS_INFO = "QSFP0_RX xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]QSFP0_RX_TUSER;
+  (* CONN_BUS_INFO = "QSFP0_RX xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire QSFP0_RX_TVALID;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]QSFP0_TX_TDATA;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]QSFP0_TX_TKEEP;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire QSFP0_TX_TLAST;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire QSFP0_TX_TREADY;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]QSFP0_TX_TUSER;
+  (* CONN_BUS_INFO = "QSFP0_TX xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire QSFP0_TX_TVALID;
   wire [511:0]S_AXIS_RX_tdata;
   wire [63:0]S_AXIS_RX_tkeep;
   wire S_AXIS_RX_tlast;
@@ -1156,74 +1167,63 @@ module ila_imp_GWG18S
   wire S_AXIS_TX_tready;
   wire S_AXIS_TX_tuser;
   wire S_AXIS_TX_tvalid;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]axis_register_slice_0_M_AXIS_TDATA;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]axis_register_slice_0_M_AXIS_TKEEP;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TLAST;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TREADY;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]axis_register_slice_0_M_AXIS_TUSER;
-  (* CONN_BUS_INFO = "axis_register_slice_0_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire axis_register_slice_0_M_AXIS_TVALID;
   wire cmac_gt_rxusrclk2;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]rx_register_slice_M_AXIS_TDATA;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]rx_register_slice_M_AXIS_TKEEP;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire rx_register_slice_M_AXIS_TLAST;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [0:0]rx_register_slice_M_AXIS_TUSER;
-  (* CONN_BUS_INFO = "rx_register_slice_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire rx_register_slice_M_AXIS_TVALID;
 
-  assign M_AXIS_RX_tdata[511:0] = rx_register_slice_M_AXIS_TDATA;
-  assign M_AXIS_RX_tkeep[63:0] = rx_register_slice_M_AXIS_TKEEP;
-  assign M_AXIS_RX_tlast = rx_register_slice_M_AXIS_TLAST;
-  assign M_AXIS_RX_tuser = rx_register_slice_M_AXIS_TUSER;
-  assign M_AXIS_RX_tvalid = rx_register_slice_M_AXIS_TVALID;
-  assign M_AXIS_TX_tdata[511:0] = axis_register_slice_0_M_AXIS_TDATA;
-  assign M_AXIS_TX_tkeep[63:0] = axis_register_slice_0_M_AXIS_TKEEP;
-  assign M_AXIS_TX_tlast = axis_register_slice_0_M_AXIS_TLAST;
-  assign M_AXIS_TX_tuser[0] = axis_register_slice_0_M_AXIS_TUSER;
-  assign M_AXIS_TX_tvalid = axis_register_slice_0_M_AXIS_TVALID;
-  assign axis_register_slice_0_M_AXIS_TREADY = M_AXIS_TX_tready;
+  assign M_AXIS_RX_tdata[511:0] = QSFP0_RX_TDATA;
+  assign M_AXIS_RX_tkeep[63:0] = QSFP0_RX_TKEEP;
+  assign M_AXIS_RX_tlast = QSFP0_RX_TLAST;
+  assign M_AXIS_RX_tuser = QSFP0_RX_TUSER;
+  assign M_AXIS_RX_tvalid = QSFP0_RX_TVALID;
+  assign M_AXIS_TX_tdata[511:0] = QSFP0_TX_TDATA;
+  assign M_AXIS_TX_tkeep[63:0] = QSFP0_TX_TKEEP;
+  assign M_AXIS_TX_tlast = QSFP0_TX_TLAST;
+  assign M_AXIS_TX_tuser[0] = QSFP0_TX_TUSER;
+  assign M_AXIS_TX_tvalid = QSFP0_TX_TVALID;
+  assign QSFP0_TX_TREADY = M_AXIS_TX_tready;
   assign cmac_gt_rxusrclk2 = stream_clk;
   top_level_tx_register_slice_0 rx_register_slice
        (.aclk(cmac_gt_rxusrclk2),
         .aresetn(1'b1),
-        .m_axis_tdata(rx_register_slice_M_AXIS_TDATA),
-        .m_axis_tkeep(rx_register_slice_M_AXIS_TKEEP),
-        .m_axis_tlast(rx_register_slice_M_AXIS_TLAST),
-        .m_axis_tuser(rx_register_slice_M_AXIS_TUSER),
-        .m_axis_tvalid(rx_register_slice_M_AXIS_TVALID),
+        .m_axis_tdata(QSFP0_RX_TDATA),
+        .m_axis_tkeep(QSFP0_RX_TKEEP),
+        .m_axis_tlast(QSFP0_RX_TLAST),
+        .m_axis_tuser(QSFP0_RX_TUSER),
+        .m_axis_tvalid(QSFP0_RX_TVALID),
         .s_axis_tdata(S_AXIS_RX_tdata),
         .s_axis_tkeep(S_AXIS_RX_tkeep),
         .s_axis_tlast(S_AXIS_RX_tlast),
         .s_axis_tuser(S_AXIS_RX_tuser),
         .s_axis_tvalid(S_AXIS_RX_tvalid));
-  top_level_system_ila_0_0 system_ila
-       (.SLOT_0_AXIS_tdata(axis_register_slice_0_M_AXIS_TDATA[0]),
+  top_level_system_ila_0_0 system_ila_tx
+       (.SLOT_0_AXIS_tdata(QSFP0_TX_TDATA[0]),
         .SLOT_0_AXIS_tdest(1'b0),
         .SLOT_0_AXIS_tid(1'b0),
-        .SLOT_0_AXIS_tkeep(axis_register_slice_0_M_AXIS_TKEEP[0]),
-        .SLOT_0_AXIS_tlast(axis_register_slice_0_M_AXIS_TLAST),
-        .SLOT_0_AXIS_tready(axis_register_slice_0_M_AXIS_TREADY),
+        .SLOT_0_AXIS_tkeep(QSFP0_TX_TKEEP[0]),
+        .SLOT_0_AXIS_tlast(QSFP0_TX_TLAST),
+        .SLOT_0_AXIS_tready(QSFP0_TX_TREADY),
         .SLOT_0_AXIS_tstrb(1'b1),
-        .SLOT_0_AXIS_tuser(axis_register_slice_0_M_AXIS_TUSER),
-        .SLOT_0_AXIS_tvalid(axis_register_slice_0_M_AXIS_TVALID),
-        .SLOT_1_AXIS_tdata(rx_register_slice_M_AXIS_TDATA[0]),
+        .SLOT_0_AXIS_tuser(QSFP0_TX_TUSER),
+        .SLOT_0_AXIS_tvalid(QSFP0_TX_TVALID),
+        .SLOT_1_AXIS_tdata(QSFP0_RX_TDATA[0]),
         .SLOT_1_AXIS_tdest(1'b0),
         .SLOT_1_AXIS_tid(1'b0),
-        .SLOT_1_AXIS_tkeep(rx_register_slice_M_AXIS_TKEEP[0]),
-        .SLOT_1_AXIS_tlast(rx_register_slice_M_AXIS_TLAST),
+        .SLOT_1_AXIS_tkeep(QSFP0_RX_TKEEP[0]),
+        .SLOT_1_AXIS_tlast(QSFP0_RX_TLAST),
         .SLOT_1_AXIS_tready(1'b1),
         .SLOT_1_AXIS_tstrb(1'b1),
-        .SLOT_1_AXIS_tuser(rx_register_slice_M_AXIS_TUSER),
-        .SLOT_1_AXIS_tvalid(rx_register_slice_M_AXIS_TVALID),
+        .SLOT_1_AXIS_tuser(QSFP0_RX_TUSER),
+        .SLOT_1_AXIS_tvalid(QSFP0_RX_TVALID),
         .clk(cmac_gt_rxusrclk2),
         .resetn(1'b0));
   top_level_axis_register_slice_0_5 tx_register_slice
        (.aclk(cmac_gt_rxusrclk2),
         .aresetn(1'b1),
-        .m_axis_tdata(axis_register_slice_0_M_AXIS_TDATA),
-        .m_axis_tkeep(axis_register_slice_0_M_AXIS_TKEEP),
-        .m_axis_tlast(axis_register_slice_0_M_AXIS_TLAST),
-        .m_axis_tready(axis_register_slice_0_M_AXIS_TREADY),
-        .m_axis_tuser(axis_register_slice_0_M_AXIS_TUSER),
-        .m_axis_tvalid(axis_register_slice_0_M_AXIS_TVALID),
+        .m_axis_tdata(QSFP0_TX_TDATA),
+        .m_axis_tkeep(QSFP0_TX_TKEEP),
+        .m_axis_tlast(QSFP0_TX_TLAST),
+        .m_axis_tready(QSFP0_TX_TREADY),
+        .m_axis_tuser(QSFP0_TX_TUSER),
+        .m_axis_tvalid(QSFP0_TX_TVALID),
         .s_axis_tdata(S_AXIS_TX_tdata),
         .s_axis_tkeep(S_AXIS_TX_tkeep),
         .s_axis_tlast(S_AXIS_TX_tlast),

@@ -99,7 +99,8 @@ xfer_packets=$((xfer_bytes / packet_bytes / 2))
 xfer_bytes=$((xfer_packets * 2 * packet_bytes))
 
 # Perform a system reset
-reset
+echo "Resetting..."
+reset; sleep 3
 
 # Start transferring packets
 start $xfer_packets

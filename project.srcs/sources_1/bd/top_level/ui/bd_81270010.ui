@@ -49,7 +49,7 @@ levelinfo -pg 1 0 190 560 880 1030
 pagesize -pg 1 -db -bbox -sgen -160 0 1160 620
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-224,3",
+   "No Loops_TopLeft":"-262,-14",
    "Reduced Jogs_ScaleFactor":"1.0",
    "Reduced Jogs_TopLeft":"-336,-168",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS

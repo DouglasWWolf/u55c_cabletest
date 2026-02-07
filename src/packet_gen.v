@@ -5,6 +5,8 @@
 //   Date     Who   Ver  Changes
 //====================================================================================
 // 08-Dec-23  DWW     1  Initial creation
+//
+// 02-Feb-26  DWW     2  Packets now have RDMX headers
 //====================================================================================
 
 /*
@@ -13,7 +15,7 @@
     has been looped-back
 */
 
-module packet_gen
+module packet_gen # (parameter SRC_MAC = 0)
 (
     input   clk, resetn,
    
@@ -27,25 +29,25 @@ module packet_gen
     //==================================================================
     //                   The packet-output stream
     //==================================================================
-    output[511:0] AXIS_OUT_TDATA,
-    output[ 63:0] AXIS_OUT_TKEEP,
-    output        AXIS_OUT_TLAST,
-    output        AXIS_OUT_TVALID,
-    input         AXIS_OUT_TREADY,
+    output reg [511:0] AXIS_OUT_TDATA,
+    output     [ 63:0] AXIS_OUT_TKEEP,
+    output             AXIS_OUT_TLAST,
+    output             AXIS_OUT_TVALID,
+    input              AXIS_OUT_TREADY,
     //==================================================================    
 
 
     //==================================================================
     //                   The FIFO output stream
     //==================================================================
-    output[511:0] AXIS_FIFO_TDATA,
-    output        AXIS_FIFO_TVALID,
-    input         AXIS_FIFO_TREADY
+    output reg [511:0] AXIS_FIFO_TDATA,
+    output             AXIS_FIFO_TVALID,
+    input              AXIS_FIFO_TREADY
     //==================================================================    
 
 );
 
-
+reg[ 15:0] rdmx_seq_num;
 reg[ 63:0] packets_sent;
 reg[  7:0] cycle_number;
 reg        inject_latched;
@@ -80,8 +82,16 @@ localparam STA_BUSY   = 0;
 localparam STA_SENT   = 1;
 localparam STA_HALTED = 2;
 
+// This is an RDMX header for the packet
+wire[511:0] rdmx_header;
+
 // TDATA is driven with (psuedo) random bits, with potentially 1 bit flipped
-assign AXIS_OUT_TDATA = random ^ single_bit_error;
+always @* begin
+    if (cycle_number == 1)
+        AXIS_OUT_TDATA = rdmx_header;
+    else
+        AXIS_OUT_TDATA = random ^ single_bit_error;
+end
 
 // We always keep all bytes of the packet
 assign AXIS_OUT_TKEEP = -1;
@@ -93,7 +103,14 @@ assign AXIS_OUT_TVALID = (fsm_state == FSM_GENERATE);
 assign AXIS_OUT_TLAST = (fsm_state == FSM_GENERATE) & (cycle_number == CYCLES_PER_PACKET);
 
 // The FIFO output stream is data-driven from the random-number-generator
-assign AXIS_FIFO_TDATA  = random;
+always @* begin
+    if (cycle_number == 1)
+        AXIS_FIFO_TDATA = rdmx_header;
+    else
+        AXIS_FIFO_TDATA = random;
+end
+
+// We write to the FIFO any time we write to AXIS_OUT
 assign AXIS_FIFO_TVALID = handshake;
 
 // We're busy any time we're generating packets
@@ -104,6 +121,19 @@ assign status[STA_HALTED] = (status[STA_BUSY] == 0) & halt;
 
 // Strobe "packet_sent" on the last cycle of every packet
 assign status[STA_SENT] = (handshake & AXIS_OUT_TLAST);
+
+
+//==================================================================
+// Increment the rdmx_seq_num every time we complete a packet
+//==================================================================
+always @(posedge clk) begin
+    if (resetn == 0)
+        rdmx_seq_num <= 0;
+    else if (AXIS_OUT_TVALID & AXIS_OUT_TREADY & AXIS_OUT_TLAST)
+        rdmx_seq_num <= rdmx_seq_num + 1;
+end
+//==================================================================
+
 
 //==================================================================
 // This state machine drives data-packets out both the AXIS_OUT
@@ -167,5 +197,18 @@ always @(posedge clk) begin
 end
 //==================================================================
 
+
+//==================================================================
+// This generates an RDMX header
+//==================================================================
+rdmx_encoder # (.SRC_MAC(SRC_MAC)) i_encoder
+(
+    .rdmx_target_addr(0),
+    .rdmx_flags(0),
+    .rdmx_seq_num(rdmx_seq_num),
+    .payload_length((CYCLES_PER_PACKET-1) * 64),
+    .le_rdmx_header(rdmx_header)
+);
+//==================================================================
 
 endmodule

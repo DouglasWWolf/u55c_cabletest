@@ -5,26 +5,26 @@
    "DisplayTieOff":"1",
    "ExpandedHierarchyInLayout":"",
    "No Loops_ExpandedHierarchyInLayout":"",
-   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port S_AXIS_TX -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace port M_AXIS_TX -pg 1 -lvl 3 -x 480 -y 100 -defaultsOSRD
+preplace port M_AXIS_TX -pg 1 -lvl 3 -x 470 -y 100 -defaultsOSRD
 preplace port S_AXIS_RX -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
-preplace port M_AXIS_RX -pg 1 -lvl 3 -x 480 -y 360 -defaultsOSRD
+preplace port M_AXIS_RX -pg 1 -lvl 3 -x 470 -y 360 -defaultsOSRD
 preplace port port-id_stream_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace inst system_ila -pg 1 -lvl 2 -x 360 -y 160 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 14 13} -defaultsOSRD -pinDir SLOT_0_AXIS left -pinY SLOT_0_AXIS 0L -pinDir SLOT_1_AXIS left -pinY SLOT_1_AXIS 80L -pinDir clk left -pinY clk 140L -pinDir resetn left -pinY resetn 100L
-preplace inst tx_register_slice -pg 1 -lvl 1 -x 140 -y 60 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 40R -pinDir aclk left -pinY aclk 20L -pinDir aresetn left -pinY aresetn 40L
-preplace inst rx_register_slice -pg 1 -lvl 1 -x 140 -y 200 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 40R -pinDir aclk left -pinY aclk 20L -pinDir aresetn left -pinY aresetn 40L
+preplace inst system_ila_tx -pg 1 -lvl 2 -x 350 -y 140 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20} -defaultsOSRD -pinDir SLOT_0_AXIS left -pinY SLOT_0_AXIS 20L -pinDir SLOT_1_AXIS left -pinY SLOT_1_AXIS 100L -pinDir clk left -pinY clk 160L -pinDir resetn left -pinY resetn 120L
+preplace inst tx_register_slice -pg 1 -lvl 1 -x 140 -y 40 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 60R -pinDir aclk left -pinY aclk 40L -pinDir aresetn left -pinY aresetn 60L
+preplace inst rx_register_slice -pg 1 -lvl 1 -x 140 -y 180 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 60R -pinDir aclk left -pinY aclk 40L -pinDir aresetn left -pinY aresetn 60L
 preplace netloc cmac_gt_rxusrclk2 1 0 2 20 300 NJ
-preplace netloc S_AXIS_TX_1 1 0 1 NJ 60
-preplace netloc axis_register_slice_0_M_AXIS 1 1 2 250 100 NJ
+preplace netloc QSFP0_RX 1 1 2 250 360 NJ
+preplace netloc QSFP0_TX 1 1 2 250 100 NJ
 preplace netloc S_AXIS_RX_1 1 0 1 NJ 200
-preplace netloc rx_register_slice_M_AXIS 1 1 2 250 360 NJ
-levelinfo -pg 1 0 140 360 480
-pagesize -pg 1 -db -bbox -sgen -130 0 610 380
+preplace netloc S_AXIS_TX_1 1 0 1 NJ 60
+levelinfo -pg 1 0 140 350 470
+pagesize -pg 1 -db -bbox -sgen -130 0 600 380
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-486,-152",
+   "No Loops_TopLeft":"-528,-167",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace port SLOT_0_AXIS -pg 1 -lvl 0 -x -20 -y 50 -defaultsOSRD
@@ -39,4 +39,4 @@ levelinfo -pg 1 -20 120 350 460
 pagesize -pg 1 -db -bbox -sgen -170 -220 460 310
 "
 }
-
+0

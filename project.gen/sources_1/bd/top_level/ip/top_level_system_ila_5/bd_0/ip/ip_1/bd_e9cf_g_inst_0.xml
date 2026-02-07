@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>xilinx.com</spirit:vendor>
   <spirit:library>customized_ip</spirit:library>
-  <spirit:name>bd_2b8e_g_inst_0</spirit:name>
+  <spirit:name>bd_e9cf_g_inst_0</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -888,7 +888,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_TREADY</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.SLOT_0_AXIS.HAS_TREADY">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.SLOT_0_AXIS.HAS_TREADY">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1750,7 +1750,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_TREADY</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TREADY">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TREADY">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -18128,7 +18128,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_TREADY</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_SLOT_0_AXIS.HAS_TREADY">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_SLOT_0_AXIS.HAS_TREADY">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -18990,7 +18990,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_TREADY</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_SLOT_1_AXIS.HAS_TREADY">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_SLOT_1_AXIS.HAS_TREADY">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -50177,7 +50177,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.slot_0_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; ">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.slot_0_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; ">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -51261,7 +51261,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.slot_1_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; ">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.slot_1_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; ">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -67506,7 +67506,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_slot_0_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_MON_MODE&apos;)) != &quot;RT&quot;">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_slot_0_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_0_MON_MODE&apos;)) != &quot;RT&quot;">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -68554,7 +68554,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_slot_1_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_MON_MODE&apos;)) != &quot;RT&quot;">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_slot_1_axis_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_MONITOR_SLOTS&apos;)) > 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_AXI_PROTOCOL&apos;)) = &quot;AXI4S&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.C_SLOT_1_MON_MODE&apos;)) != &quot;RT&quot;">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -98203,12 +98203,12 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SLOT_0_HAS_TREADY</spirit:name>
         <spirit:displayName>C Slot 0 HAS TREADY</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SLOT_0_HAS_TREADY">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SLOT_1_HAS_TREADY</spirit:name>
         <spirit:displayName>C Slot 1 HAS TREADY</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SLOT_1_HAS_TREADY">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SLOT_2_HAS_TREADY</spirit:name>
@@ -104874,12 +104874,12 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
     <spirit:parameter>
       <spirit:name>C_SLOT_1_HAS_TREADY</spirit:name>
       <spirit:displayName>C Slot 1 HAS TREADY</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SLOT_1_HAS_TREADY" spirit:choiceRef="choice_list_8af5a703" spirit:order="1.85592e+09" spirit:configGroups="0 UnGrouped radioGroup">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SLOT_1_HAS_TREADY" spirit:choiceRef="choice_list_8af5a703" spirit:order="1.85592e+09" spirit:configGroups="0 UnGrouped radioGroup">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_SLOT_0_HAS_TREADY</spirit:name>
       <spirit:displayName>C Slot 0 HAS TREADY</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SLOT_0_HAS_TREADY" spirit:choiceRef="choice_list_8af5a703" spirit:order="1.95592e+09" spirit:configGroups="0 UnGrouped radioGroup">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SLOT_0_HAS_TREADY" spirit:choiceRef="choice_list_8af5a703" spirit:order="1.95592e+09" spirit:configGroups="0 UnGrouped radioGroup">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_SLOT_15_HAS_TKEEP</spirit:name>
@@ -110434,7 +110434,7 @@ lot_5_axi:slot_6_axi:slot_7_axi:slot_8_axi:slot_9_axi:slot_10_axi:slot_11_axi:sl
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
       <spirit:displayName>Component Name</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">bd_2b8e_g_inst_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">bd_e9cf_g_inst_0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_SLOT_0_MON_MODE</spirit:name>

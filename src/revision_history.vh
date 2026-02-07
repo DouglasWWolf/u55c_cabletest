@@ -20,11 +20,13 @@
  1.6.0  29-Nov-24  DWW  Added ILAs on the CMAC tx and rx streams
                                            
  1.8.0  04-Jul-25  DWW  Integrated with the build system
+ 
+ 1.9.0  02-Feb-26  DWW  Packets now have RDMX headers
 ================================================================================================
 */
 
 localparam VERSION_MAJOR = 1;
-localparam VERSION_MINOR = 8;
+localparam VERSION_MINOR = 9;
 localparam VERSION_BUILD = 0;
 localparam VERSION_RCAND = 0;
 

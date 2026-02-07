@@ -1,10 +1,10 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4B73131FA4AB6811",
+      "boundary_crc": "0xD8CD627BA9DE7419",
       "design_src": "SBD",
       "device": "xcu55c-fsvh2892-2L-e",
-      "name": "bd_2b8e",
+      "name": "bd_e9cf",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "scoped": "true",
       "synth_flow_mode": "None",
@@ -39,7 +39,7 @@
             "value_src": "default"
           },
           "HAS_TREADY": {
-            "value": "1",
+            "value": "0",
             "value_src": "default"
           },
           "HAS_TSTRB": {
@@ -99,7 +99,7 @@
             "value_src": "default"
           },
           "HAS_TREADY": {
-            "value": "0",
+            "value": "1",
             "value_src": "default"
           },
           "HAS_TSTRB": {
@@ -189,8 +189,8 @@
       "ila_lib": {
         "vlnv": "xilinx.com:ip:ila:6.2",
         "ip_revision": "16",
-        "xci_name": "bd_2b8e_ila_lib_0",
-        "xci_path": "ip/ip_0/bd_2b8e_ila_lib_0.xci",
+        "xci_name": "bd_e9cf_ila_lib_0",
+        "xci_path": "ip/ip_0/bd_e9cf_ila_lib_0.xci",
         "inst_hier_path": "ila_lib",
         "parameters": {
           "ALL_PROBE_SAME_MU": {
@@ -260,19 +260,19 @@
             "value": "0"
           },
           "C_PROBE5_WIDTH": {
-            "value": "1"
+            "value": "512"
           },
           "C_PROBE6_TYPE": {
             "value": "0"
           },
           "C_PROBE6_WIDTH": {
-            "value": "512"
+            "value": "64"
           },
           "C_PROBE7_TYPE": {
             "value": "0"
           },
           "C_PROBE7_WIDTH": {
-            "value": "64"
+            "value": "1"
           },
           "C_PROBE8_TYPE": {
             "value": "0"
@@ -300,8 +300,8 @@
       "g_inst": {
         "vlnv": "xilinx.com:ip:gigantic_mux:1.0",
         "ip_revision": "3",
-        "xci_name": "bd_2b8e_g_inst_0",
-        "xci_path": "ip/ip_1/bd_2b8e_g_inst_0.xci",
+        "xci_name": "bd_e9cf_g_inst_0",
+        "xci_path": "ip/ip_1/bd_e9cf_g_inst_0.xci",
         "inst_hier_path": "g_inst",
         "parameters": {
           "C_EN_GIGAMUX": {
@@ -332,7 +332,7 @@
             "value": "1"
           },
           "C_SLOT_0_HAS_TREADY": {
-            "value": "1"
+            "value": "0"
           },
           "C_SLOT_0_HAS_TSTRB": {
             "value": "0"
@@ -359,7 +359,7 @@
             "value": "1"
           },
           "C_SLOT_1_HAS_TREADY": {
-            "value": "0"
+            "value": "1"
           },
           "C_SLOT_1_HAS_TSTRB": {
             "value": "0"
@@ -407,12 +407,6 @@
       "net_slot_0_axis_tlast": {
         "ports": [
           "g_inst/m_slot_0_axis_tlast",
-          "ila_lib/probe5"
-        ]
-      },
-      "net_slot_0_axis_tready": {
-        "ports": [
-          "g_inst/m_slot_0_axis_tready",
           "ila_lib/probe4"
         ]
       },
@@ -431,13 +425,13 @@
       "net_slot_1_axis_tdata": {
         "ports": [
           "g_inst/m_slot_1_axis_tdata",
-          "ila_lib/probe6"
+          "ila_lib/probe5"
         ]
       },
       "net_slot_1_axis_tkeep": {
         "ports": [
           "g_inst/m_slot_1_axis_tkeep",
-          "ila_lib/probe7"
+          "ila_lib/probe6"
         ]
       },
       "net_slot_1_axis_tlast": {
@@ -446,16 +440,22 @@
           "ila_lib/probe10"
         ]
       },
+      "net_slot_1_axis_tready": {
+        "ports": [
+          "g_inst/m_slot_1_axis_tready",
+          "ila_lib/probe9"
+        ]
+      },
       "net_slot_1_axis_tuser": {
         "ports": [
           "g_inst/m_slot_1_axis_tuser",
-          "ila_lib/probe8"
+          "ila_lib/probe7"
         ]
       },
       "net_slot_1_axis_tvalid": {
         "ports": [
           "g_inst/m_slot_1_axis_tvalid",
-          "ila_lib/probe9"
+          "ila_lib/probe8"
         ]
       },
       "resetn_1": {
